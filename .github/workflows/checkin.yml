@@ -33,10 +33,4 @@ jobs:
           ZAIMANHUA_COOKIE_5: ${{ secrets.ZAIMANHUA_COOKIE_5 }}
         run: python src/checkin.py
 
-  keepalive-job:
-    name: Keepalive Workflow
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-    steps:
-      - uses: liskin/gh-workflow-keepalive@v1
+
