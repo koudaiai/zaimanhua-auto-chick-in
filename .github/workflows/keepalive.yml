@@ -1,0 +1,16 @@
+name: Keepalive Workflow
+
+on:
+  schedule:
+    # 每 45 天触发一次，早于 GitHub 60 天的暂停阈值
+    - cron: '0 0 */45 * *'
+  workflow_dispatch:   # 支持手动触发
+
+jobs:
+  keepalive:
+    name: Re-enable workflows
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: liskin/gh-workflow-keepalive@v1
